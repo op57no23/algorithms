@@ -7,7 +7,7 @@ public class Percolation {
 	private boolean[] openSites;
 	private int size;
 	private int countOpen;
-	public WeightedQuickUnionUF grid;
+	private WeightedQuickUnionUF grid;
 
     public Percolation(int n){
 		if (n <= 0) {throw new IllegalArgumentException();}
@@ -71,16 +71,5 @@ public class Percolation {
 	
 	public boolean percolate(){
 		return grid.connected(0, arraysize - 1);
-	}
-	public static void main(String[] args){
-		Percolation perc = new Percolation(5);
-	    perc.open(1,1);
-		perc.open(2,1);
-		perc.open(3,1);
-		perc.open(4,1);
-		perc.open(5,1);
-		System.out.println(perc.isOpen(6,43));
-		System.out.println(perc.percolate());
-		System.out.println(perc.numberOfOpenSites());
 	}
 }
