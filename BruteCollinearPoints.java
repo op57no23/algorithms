@@ -10,7 +10,7 @@ public class BruteCollinearPoints {
 		public BruteCollinearPoints(Point[] points){
 				if (points == null) throw new IllegalArgumentException();
 				containsRepeatPoint(points);
-				allPoints = points;
+				allPoints = Arrays.copyOf(points, points.length);
 				combos = new ArrayList<LineSegment>();
 				generateCombos(4);
 				segments = new LineSegment[0];
@@ -22,7 +22,7 @@ public class BruteCollinearPoints {
 		}
 
 		public LineSegment[] segments(){
-				return segments;
+				return Arrays.copyOf(segments, segments.length);
 
 		}
 
@@ -45,9 +45,11 @@ public class BruteCollinearPoints {
 		}
 
 		private void containsRepeatPoint(Point[] points){
+				if (points[0] == null) throw new IllegalArgumentException();
+				if (points.length == 1) return;
 				for (int i = 0; i < points.length - 1; i++) {
-						if (points[i] == null) throw new IllegalArgumentException();
 						for (int j = i + 1; j < points.length; j++) {
+								if (points[j] == null || points[j - 1] == null) throw new IllegalArgumentException();
 								if (points[j].compareTo(points[i]) == 0) {
 										throw new IllegalArgumentException();
 								}
@@ -75,7 +77,6 @@ public class BruteCollinearPoints {
 						}
 				}
 		}
-
 		public static void main(String[] args) {
 				Point p1 = new Point(3,4);
 				Point p2 = new Point(4,5);
@@ -87,7 +88,6 @@ public class BruteCollinearPoints {
 				Point[] points = { p1, p2, p3, p4, p5, p6, p7 };
 				BruteCollinearPoints test = new BruteCollinearPoints(points);
 				for (LineSegment y : test.segments()){
-						System.out.println(y);
 				}
 		}
 }
