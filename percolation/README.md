@@ -13,7 +13,7 @@
 
 ## My code
 
-The Percolation class has the constructor for the grid and provides methods for opening squares and checking if the grid Percolates. It relies on the provided WeightedUnionQuickFind class to implement a union-find data structure. The PercolationStats class performs the Monte Carlo simulation by initializing a grid with all blocked squares and then randomly opening blocked squares until the sytem percolates. It records the fraction of sites that are open at that point and then computes the sample mean, sample standard deviation, and confidence interval for the percolation threshold.
+The Percolation class has the constructor for the grid and provides methods for opening squares and checking if the grid Percolates. It relies on the provided [WeightedUnionQuickFind class](https://algs4.cs.princeton.edu/code/javadoc/edu/princeton/cs/algs4/WeightedQuickUnionUF.html) to implement a union-find data structure. The PercolationStats class performs the Monte Carlo simulation by initializing a grid with all blocked squares and then randomly opening blocked squares until the sytem percolates. It records the fraction of sites that are open at that point and then computes the sample mean, sample standard deviation, and confidence interval for the percolation threshold.
 
 ## How to run
 
