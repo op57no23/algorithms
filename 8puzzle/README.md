@@ -7,7 +7,7 @@ In this project I used the A\* search algorithm to solve the [8 puzzle](https://
 
 - java -jar Solver.jar inputFile.txt
 
-The input file contains the board size n, followed by the n-by-n grid of tiles, using 0 to designate the blank square.
+The input file contains the board size n, followed by the n-by-n grid of tiles, using 0 to designate the blank square. Sample boards can be found in the TestBoards folder.
 
 The output will look like:
 
