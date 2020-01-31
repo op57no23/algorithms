@@ -7,7 +7,8 @@ import java.util.ArrayList;
 public class KdTree {
 		private Node root;
 		private int size;
-
+		
+		// private helper class
 		private static class Node {
 				private Node leftChild;
 				private Node rightChild;
